@@ -15,3 +15,9 @@ main = hspec $ do
 
     it "reverts number list" $ do
       toDigitsRev(1234) `shouldBe` [4, 3, 2, 1]
+
+    it "doubles every odd index in a even size list" $ do
+      doubleEveryOther [8,7,6,5] `shouldBe` [16,7,12,5]
+
+    it "doubles every odd index in a odd size list" $ do
+      doubleEveryOther [1, 2, 3] `shouldBe` [1, 4, 3]
