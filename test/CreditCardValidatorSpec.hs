@@ -12,3 +12,6 @@ main = hspec $ do
 
     it "converts negative number to empty list" $ do
       toDigits(-12) `shouldBe` []
+
+    it "reverts number list" $ do
+      toDigitsRev(1234) `shouldBe` [4, 3, 2, 1]
