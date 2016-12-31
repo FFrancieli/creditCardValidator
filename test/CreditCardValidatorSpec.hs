@@ -21,3 +21,6 @@ main = hspec $ do
 
     it "doubles every odd index in a odd size list" $ do
       doubleEveryOther [1, 2, 3] `shouldBe` [1, 4, 3]
+
+    it "sums all digits in a list" $ do
+      sumDigits [16,7,12,5] `shouldBe` 22

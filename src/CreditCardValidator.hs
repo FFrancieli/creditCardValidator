@@ -22,3 +22,11 @@ doubleEven :: [Integer] -> [Integer]
 doubleEven [] = []
 doubleEven (x:[]) = [x]
 doubleEven (x:(y:zs)) = x : (y * 2) : doubleEven zs
+
+everyNumberToDigit :: [Integer] -> [[Integer]]
+everyNumberToDigit [] = []
+everyNumberToDigit (x:xs) = (toDigits x) : everyNumberToDigit xs
+
+
+sumDigits :: [Integer] -> Integer
+sumDigits digits = sum (concat (everyNumberToDigit digits))
