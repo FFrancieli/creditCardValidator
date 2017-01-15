@@ -24,3 +24,9 @@ main = hspec $ do
 
     it "sums all digits in a list" $ do
       sumDigits [16,7,12,5] `shouldBe` 22
+
+    it "validates valid credit card number" $ do
+      validate 4012888888881881 `shouldBe` True
+
+    it "validates invalid credit card number" $ do
+      validate 4012888888881882 `shouldBe` False

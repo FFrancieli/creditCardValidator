@@ -30,3 +30,6 @@ everyNumberToDigit (x:xs) = (toDigits x) : everyNumberToDigit xs
 
 sumDigits :: [Integer] -> Integer
 sumDigits digits = sum (concat (everyNumberToDigit digits))
+
+validate :: Integer -> Bool
+validate cardNumber = sumDigits(doubleEveryOther((toDigits cardNumber))) `mod` 10 == 0
