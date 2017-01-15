@@ -5,9 +5,6 @@ toDigits cardNumber
   | cardNumber <= 0 = []
   | otherwise   = map (\digit -> read [digit] :: Integer) (show cardNumber)
 
-toDigitsRev :: Integer -> [Integer]
-toDigitsRev cardNumber = reverse (toDigits cardNumber)
-
 doubleEveryOther :: [Integer] -> [Integer]
 doubleEveryOther numbers
   | length numbers `mod` 2 == 0 = doubleOdd(numbers)
@@ -26,7 +23,6 @@ doubleEven (x:(y:zs)) = x : (y * 2) : doubleEven zs
 everyNumberToDigit :: [Integer] -> [[Integer]]
 everyNumberToDigit [] = []
 everyNumberToDigit (x:xs) = (toDigits x) : everyNumberToDigit xs
-
 
 sumDigits :: [Integer] -> Integer
 sumDigits digits = sum (concat (everyNumberToDigit digits))
